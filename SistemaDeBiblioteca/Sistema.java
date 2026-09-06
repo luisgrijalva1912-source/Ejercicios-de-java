@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Sistema {
     public static void main(String args[]){
-        ArrayList<Material> materiales;
+        ArrayList<Material> materiales = new ArrayList<>();
         int menu = 0;
         Scanner in = new Scanner(System.in);
 
@@ -23,7 +23,22 @@ public class Sistema {
 
             switch (menu) {
                 case 1:
-                    
+                Libro libro = new Libro();
+                System.out.println("===== Registro de libro =====");
+                System.out.println("Ingrese el ID: ");
+                libro.SetId(in.nextInt());
+                in.nextLine();
+                System.out.println("Ingrese el titulo: ");
+                libro.SetTitulo(in.nextLine());
+                System.out.println("Ingrese el nombre del autor: ");
+                libro.SetAutor(in.nextLine());
+                System.out.println("Ingrese el numero de paginas: ");
+                libro.SetNumeroPaginas(in.nextInt());
+                in.nextLine();
+                
+                materiales.add(libro);
+                System.out.println("Libro registrado correctamente");
+
                     break;
                 case 2:
                     break;
