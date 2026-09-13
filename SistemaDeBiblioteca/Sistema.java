@@ -22,7 +22,7 @@ public class Sistema {
             menu = in.nextInt();
 
             switch (menu) {
-                case 1:
+                case 1: {
                 Libro libro = new Libro();
                 System.out.println("===== Registro de libro =====");
                 System.out.println("Ingrese el ID: ");
@@ -40,7 +40,8 @@ public class Sistema {
                 System.out.println("Libro registrado correctamente");
 
                     break;
-                case 2:
+                    }
+                case 2: {
                     Revista revista = new  Revista();
                     System.out.println("===== Registro de revista =====");
                     System.out.println("Ingrese el ID: ");
@@ -57,16 +58,16 @@ public class Sistema {
                     materiales.add(revista);
                     System.out.println("Revista registrada correctamente");
                     break;
-
-                case 3:
-                    System.out.println("Lista de materiales registrados");
+                    }
+                case 3: {
+                    System.out.println("===== Lista de materiales registrados =====");
                     for (Material material: materiales){
                         material.mostrarInformacion();
                         System.out.println("-----------------------------");
                     }
                     break;
-
-                case 4:
+                    }
+                case 4: {
                     System.out.println("===== Busqueda de materiales por ID =====");
                     System.out.println("Ingrese el ID: ");
 
@@ -86,26 +87,62 @@ public class Sistema {
                         System.out.println("No se ha encontrado un material con ese ID");
                     }
                     break;
+                    }
+                case 5: {
+                    System.out.println("===== Prestamo de material =====");
+                    System.out.println("Ingrese el ID del material que desea prestar");
+                    int idBuscar = in.nextInt();
+                    in.nextLine();
 
-                case 5:
+                    boolean encontrado = false;
+                    for (Material material : materiales) {
+                        if (material.GetId() == idBuscar) {
+                            material.SetDisponible(false);
+                            System.out.println(material.GetTitulo() + " Prestado existosamente");
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("No se ha encontrado un material con ese ID");
+                    }
                     break;
+                    }
+                case 6: {
+                    System.out.println("===== Devolucion de material =====");
+                    System.out.println("Ingrese el ID del material que desea devolver:");
+                    int idBuscar = in.nextInt();
+                    in.nextLine();
 
-                case 6:
+                    boolean encontrado = false;
+                    for (Material material : materiales) {
+                        if (material.GetId() == idBuscar) {
+                            material.SetDisponible(true);
+                            System.out.println(material.GetTitulo() + " Devuelto existosamente");
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("No se ha encontrado un material con ese ID");
+                    }
                     break;
+                    }
 
-                case 7:
+                case 7: {
                     break;
-
-                case 8:
+                    }
+                case 8: {
                     break;
-
-                case 9:
+                    }
+                case 9: {
                     System.out.println("Finalizando el programa....");
                     break;
-            
-                default:
+                    }
+                default: {
                     System.out.println("El valor seleccionado es invalido");
                     break;
+                    }
             }
 
         } while (menu != 9);
