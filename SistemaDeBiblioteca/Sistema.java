@@ -67,6 +67,24 @@ public class Sistema {
                     break;
 
                 case 4:
+                    System.out.println("===== Busqueda de materiales por ID =====");
+                    System.out.println("Ingrese el ID: ");
+
+                    int idBuscar = in.nextInt();
+                    in.nextLine();
+
+                    boolean encontrado = false;
+
+                    for (Material material : materiales) {
+                        if(material.GetId() == idBuscar){
+                            material.mostrarInformacion();
+                            encontrado = true;
+                            break;
+                        }      
+                    }
+                    if (!encontrado) {
+                        System.out.println("No se ha encontrado un material con ese ID");
+                    }
                     break;
 
                 case 5:

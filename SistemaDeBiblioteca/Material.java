@@ -3,7 +3,7 @@ package SistemaDeBiblioteca;
 public abstract class Material {
     private int id;
     private String titulo;
-    private boolean disponible;
+    private boolean disponible = true;
 
     public int GetId(){
         return id;

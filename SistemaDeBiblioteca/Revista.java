@@ -24,7 +24,7 @@ public class Revista extends Material{
         System.out.println("ID: " + GetId());
         System.out.println("Titulo: " + GetTitulo());
         System.out.println("Numero de edicion: " + GetNumeroEdicion());
-        System.out.println("ID: " + GetCategoria());
-        System.out.println("ID: " + GetDisponible());
+        System.out.println("Categoria: " + GetCategoria());
+        System.out.println("Disponible: " + GetDisponible());
     }
 }
