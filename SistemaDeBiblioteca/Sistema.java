@@ -41,9 +41,29 @@ public class Sistema {
 
                     break;
                 case 2:
+                    Revista revista = new  Revista();
+                    System.out.println("===== Registro de revista =====");
+                    System.out.println("Ingrese el ID: ");
+                    revista.SetId(in.nextInt());
+                    in.nextLine();
+                    System.out.println("Ingrese el titulo: ");
+                    revista.SetTitulo(in.nextLine());
+                    System.out.println("Ingrese el numero de edicion: ");
+                    revista.SetNumeroEdicion(in.nextInt());
+                    in.nextLine();
+                    System.out.println("Ingrese la categoria: ");
+                    revista.SetCategoria(in.nextLine());
+
+                    materiales.add(revista);
+                    System.out.println("Revista registrada correctamente");
                     break;
 
                 case 3:
+                    System.out.println("Lista de materiales registrados");
+                    for (Material material: materiales){
+                        material.mostrarInformacion();
+                        System.out.println("-----------------------------");
+                    }
                     break;
 
                 case 4:
