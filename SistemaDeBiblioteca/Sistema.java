@@ -130,6 +130,26 @@ public class Sistema {
                     }
 
                 case 7: {
+                    System.out.println("===== Eliminacion de un material =====");
+                    System.out.println("Ingrese el ID del material que desea eliminar");
+
+                    int idBuscar = in.nextInt();
+                    in.nextLine();
+
+                    boolean encontrado = false;
+
+                    for (int i = 0; i < materiales.size(); i++) {
+                        if (materiales.get(i).GetId() == idBuscar) {
+                            materiales.remove(i);
+                            System.out.println(materiales.get(i).GetTitulo() + " Eliminado exitosamente");
+                            encontrado = true;
+                            break;
+                        }
+                        
+                    }
+                    if (!encontrado) {
+                        System.out.println("No se ha encontrado un material con ese ID");
+                    }
                     break;
                     }
                 case 8: {
