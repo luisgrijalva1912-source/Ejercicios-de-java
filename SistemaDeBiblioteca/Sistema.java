@@ -153,6 +153,29 @@ public class Sistema {
                     break;
                     }
                 case 8: {
+                    int cantidadLibros = 0;
+                    int cantidadRevistas = 0;
+                    int disponibles = 0;
+                    int prestados = 0;
+
+                    for (Material material : materiales) {
+                        if (material instanceof Libro) {
+                            cantidadLibros++;
+                        }
+                        if (material instanceof Revista) {
+                            cantidadRevistas++;
+                        }
+                        if (material.GetDisponible() == true) {
+                            disponibles++;
+                        } else {
+                            prestados++;
+                        }
+                    }
+                    System.out.println("===== Estadisticas =====");
+                    System.out.println("Libros: " + cantidadLibros);
+                    System.out.println("Revistas: " + cantidadRevistas);
+                    System.out.println("Disponibles: " + disponibles);
+                    System.out.println("Prestados: " + prestados);
                     break;
                     }
                 case 9: {
