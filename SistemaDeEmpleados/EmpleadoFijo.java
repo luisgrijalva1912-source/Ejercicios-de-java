@@ -1,6 +1,6 @@
 package SistemaDeEmpleados;
 
-public abstract class EmpleadoFijo extends Empleado{
+public class EmpleadoFijo extends Empleado{
     //atributo extra
     private double salarioMensual;
 
