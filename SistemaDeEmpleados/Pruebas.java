@@ -2,10 +2,11 @@ package SistemaDeEmpleados;
 
 public class Pruebas {
     public static void main(String args[]){
-        EmpleadoPorHoras empleado = new EmpleadoPorHoras();
+        EmpleadoFijo empleado = new EmpleadoFijo();
 
-        empleado.setHorasTrabajadas(44);
-        empleado.setPagoPorHora(100);
+        //private double salarioMensual;
+        empleado.setSalarioMensual(3500);
+
 
         System.out.println(empleado.calcularSalario());
     }

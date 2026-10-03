@@ -26,6 +26,8 @@ public class EmpleadoPorHoras extends Empleado {
     }
     @Override
     public void mostrarInformacion(){
-
+        System.out.println("ID: " + getId());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Salario: " + calcularSalario());
     }
 }
